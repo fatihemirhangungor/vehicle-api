@@ -32,7 +32,7 @@ namespace WebApplication1.Controllers
         }
 
         [HttpPost("AddBus")]
-        public async Task<ActionResult<Bus>> PostCars([FromBody] Bus bus)
+        public async Task<ActionResult<Bus>> PostBuses([FromBody] Bus bus)
         {
             var newBus = await _busService.Create(bus);
             return CreatedAtAction(nameof(GetBuses), new { id = newBus.Id }, newBus);
